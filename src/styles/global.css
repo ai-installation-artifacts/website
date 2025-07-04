@@ -89,3 +89,14 @@ body.content-page {
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
 }
+
+/* === Click Sound & Interaction Effects === */
+
+a, button, [onclick], .clickable {
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+a:active, button:active, [onclick]:active, .clickable:active {
+    filter: brightness(0.9);
+}
