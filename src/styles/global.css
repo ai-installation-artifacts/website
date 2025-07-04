@@ -90,7 +90,7 @@ body.content-page {
     border-radius: 0.5rem;
 }
 
-/* === Click Sound & Interaction Effects === */
+/* === Interactive Elements === */
 
 a, button, [onclick], .clickable {
     transition: all 0.1s ease;
@@ -99,4 +99,9 @@ a, button, [onclick], .clickable {
 
 a:active, button:active, [onclick]:active, .clickable:active {
     filter: brightness(0.9);
+}
+
+a:focus, button:focus, [onclick]:focus, .clickable:focus {
+    outline: 2px solid var(--primary-text);
+    outline-offset: 2px;
 }
