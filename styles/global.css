@@ -4,13 +4,11 @@ body {
     font-family: 'Courier New', monospace;
     color: #E2E2FF;
     background-color: black;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    height: 100dvh;
     width: 100dvw;
+    min-height: 100svh;
 }
 
 @media (min-resolution: 2dppx) {
