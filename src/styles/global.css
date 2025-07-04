@@ -100,8 +100,3 @@ a, button, [onclick], .clickable {
 a:active, button:active, [onclick]:active, .clickable:active {
     filter: brightness(0.9);
 }
-
-a:focus, button:focus, [onclick]:focus, .clickable:focus {
-    outline: 2px solid var(--primary-text);
-    outline-offset: 2px;
-}
