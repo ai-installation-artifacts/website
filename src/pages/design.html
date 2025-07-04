@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Design</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="../styles/global.css" />
 </head>
 
-<body class="p-8">
+<body class="content-page">
   <main class="flex flex-col space-y-8">
 
     <section class="flex items-center gap-8 group">
       <a href="project.html">
-        <img src="images/arrow_left_line.svg" alt="Back" class="h-12 dual-drop-shadow" />
+        <img src="../../assets/images/icons/arrow_left_line.svg" alt="Back" class="h-12 dual-drop-shadow" />
       </a>
       <h1 class="text-3xl font-bold dual-text-shadow">DESIGN</h1>
     </section>
@@ -39,19 +39,19 @@
         <!-- Mobile -->
         <div class="flex items-center gap-4 sm:hidden">
           <button onclick="showPrevImage('colors')" class="w-6 h-6 dual-drop-shadow">
-            <img src="images/left_line.svg" alt="Zurück" class="w-full h-full" />
+            <img src="../../assets/images/icons/left_line.svg" alt="Zurück" class="w-full h-full" />
           </button>
-          <img id="mobileImageColors" src="images/colors1.png" class="w-[200px] h-[200px] object-cover rounded"
+          <img id="mobileImageColors" src="../../assets/images/design/colors1.png" class="w-[200px] h-[200px] object-cover rounded"
             alt="Colors Picture" />
           <button onclick="showNextImage('colors')" class="w-6 h-6 dual-drop-shadow">
-            <img src="images/right_line.svg" alt="Weiter" class="w-full h-full" />
+            <img src="../../assets/images/icons/right_line.svg" alt="Weiter" class="w-full h-full" />
           </button>
         </div>
 
         <!-- Desktop -->
         <div class="hidden sm:flex gap-4">
-          <img src="images/colors1.png" class="w-[200px] h-[200px] object-cover rounded" alt="Colors Picture" />
-          <img src="images/colors2.png" class="w-[200px] h-[200px] object-cover rounded" alt="Colors Picture" />
+          <img src="../../assets/images/design/colors1.png" class="w-[200px] h-[200px] object-cover rounded" alt="Colors Picture" />
+          <img src="../../assets/images/design/colors2.png" class="w-[200px] h-[200px] object-cover rounded" alt="Colors Picture" />
         </div>
       </div>
 
@@ -66,18 +66,18 @@
         <!-- Mobile -->
         <div class="flex items-center gap-4 sm:hidden">
           <button onclick="showPrevImage('materials')" class="w-6 h-6 dual-drop-shadow">
-            <img src="images/left_line.svg" alt="Zurück" class="w-full h-full" />
+            <img src="../../assets/images/icons/left_line.svg" alt="Zurück" class="w-full h-full" />
           </button>
-          <img id="mobileImageMaterials" src="images/materials1.png" class="w-[200px] h-[200px] object-cover rounded"
+          <img id="mobileImageMaterials" src="../../assets/images/design/materials1.png" class="w-[200px] h-[200px] object-cover rounded"
             alt="Material Picture" />
           <button onclick="showNextImage('materials')" class="w-6 h-6 dual-drop-shadow">
-            <img src="images/right_line.svg" alt="Weiter" class="w-full h-full" />
+            <img src="../../assets/images/icons/right_line.svg" alt="Weiter" class="w-full h-full" />
           </button>
         </div>
         <!-- Desktop -->
         <div class="hidden sm:flex gap-4">
-          <img src="images/materials1.png" class="w-[200px] h-[200px] object-cover rounded" alt="Material Picture" />
-          <img src="images/materials2.png" class="w-[200px] h-[200px] object-cover rounded" alt="Material Picture" />
+          <img src="../../assets/images/design/materials1.png" class="w-[200px] h-[200px] object-cover rounded" alt="Material Picture" />
+          <img src="../../assets/images/design/materials2.png" class="w-[200px] h-[200px] object-cover rounded" alt="Material Picture" />
         </div>
       </div>
 
@@ -88,7 +88,7 @@
       </p>
 
       <div class="py-8 flex justify-center">
-        <img src="images/sound.png" alt="Sound Picture"
+        <img src="../../assets/images/design/sound.png" alt="Sound Picture"
           class="object-cover rounded w-[200px] h-[200px] sm:w-[416px] sm:h-[200px]" />
       </div>
 
@@ -98,8 +98,8 @@
 
   <script>
     const imageSets = {
-      colors: ["images/colors1.png", "images/colors2.png"],
-      materials: ["images/materials1.png", "images/materials2.png"]
+      colors: ["../../assets/images/design/colors1.png", "../../assets/images/design/colors2.png"],
+      materials: ["../../assets/images/design/materials1.png", "../../assets/images/design/materials2.png"]
     };
 
     const currentIndex = {
