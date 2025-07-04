@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+
+<body>
+  <main class="flex flex-col space-y-8 min-w-[300px]">
+
+    <section>
+      <a href="index.html" class="inline-block w-fit">
+        <img src="images/arrow_left_line.svg" alt="Zurück zur Startseite" class="h-12 dual-drop-shadow" />
+      </a>
+    </section>
+
+    <section>
+      <button onclick="openOverlay('images/AZIM.png')" class="flex items-center gap-8 group focus:outline-none">
+        <img src="images/pic_line.svg" alt="Foto von Azim" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">AZIM.png</h1>
+      </button>
+    </section>
+
+    <section>
+      <button onclick="openOverlay('images/AYSE.png')" class="flex items-center gap-8 group focus:outline-none">
+        <img src="images/pic_line.svg" alt="Foto von Ayse" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">AYSE.png</h1>
+      </button>
+    </section>
+
+    <section>
+      <button onclick="openOverlay('images/MAXI.png')" class="flex items-center gap-8 group focus:outline-none">
+        <img src="images/pic_line.svg" alt="Foto von Maxi" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">MAXI.png</h1>
+      </button>
+    </section>
+
+    <section>
+      <button onclick="openOverlay('images/SALOME.png')" class="flex items-center gap-8 group focus:outline-none">
+        <img src="images/pic_line.svg" alt="Foto von Salome" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">SALOME.png</h1>
+      </button>
+    </section>
+
+  </main>
+
+  <div id="overlay" class="overlay-container hidden">
+    <div class="dual-drop-shadow">
+      <div class="overlay-box relative">
+
+        <button onclick="closeOverlay()" class="overlay-close">
+          <img src="images/close_line.svg" alt="Schließen" class="w-6 h-6" />
+        </button>
+
+        <div class="flex-1 flex items-center justify-center px-12 pt-12">
+          <img id="overlayImage" src="" alt="Großansicht Teamfoto" class="overlay-image" />
+        </div>
+
+        <div id="overlayFilename" class="overlay-filename dual-text-shadow"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openOverlay(imagePath) {
+      const filename = imagePath.split('/').pop();
+      document.getElementById("overlayImage").src = imagePath;
+      document.getElementById("overlayFilename").textContent = filename;
+      document.getElementById("overlay").classList.remove("hidden");
+    }
+
+    function closeOverlay() {
+      document.getElementById("overlayImage").src = "";
+      document.getElementById("overlayFilename").textContent = "";
+      document.getElementById("overlay").classList.add("hidden");
+    }
+
+    document.getElementById("overlay").addEventListener("click", function (e) {
+      if (e.target === this) closeOverlay();
+    });
+  </script>
+</body>
+
+</html>

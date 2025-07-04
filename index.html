@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifacts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+
+<body>
+  
+  <div id="introOverlay">
+    <video id="introVideoMobile" class="absolute inset-0 w-full h-full object-cover block md:hidden" autoplay muted
+      playsinline>
+      <source src="artifacts_mobile.mov" type="video/mp4" />
+    </video>
+    <video id="introVideoDesktop" class="absolute inset-0 w-full h-full object-cover hidden md:block" autoplay muted
+      playsinline>
+      <source src="artifacts_desktop.mov" type="video/mp4" />
+    </video>
+  </div>
+
+  <main id="mainContent" class="flex flex-col p-8 space-y-8 hidden min-w-[300px]">
+    <section>
+      <a href="index.html" class="flex items-center gap-8 group">
+        <img src="images/film_line.svg" alt="Film Icon" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">TRAILER.mov</h1>
+      </a>
+    </section>
+
+    <section>
+      <a href="project.html" class="flex items-center gap-8 group">
+        <img src="images/folder_open_fill.svg" alt="Projektordner" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">PROJECT INFO</h1>
+      </a>
+    </section>
+
+    <section>
+      <a href="team.html" class="flex items-center gap-8 group">
+        <img src="images/folder_open_fill.svg" alt="Teamordner" class="h-12 dual-drop-shadow" />
+        <h1 class="text-3xl font-bold dual-text-shadow">TEAM</h1>
+      </a>
+    </section>
+  </main>
+
+  <script>
+    const overlay = document.getElementById("introOverlay");
+    const main = document.getElementById("mainContent");
+    const video = window.innerWidth < 768
+      ? document.getElementById("introVideoMobile")
+      : document.getElementById("introVideoDesktop");
+
+    const hasSeenIntro = sessionStorage.getItem("introPlayed");
+
+    if (hasSeenIntro === "true") {
+      overlay.style.display = "none";
+      main.style.display = "flex";
+    } else {
+      video.addEventListener("ended", () => {
+        overlay.style.display = "none";
+        main.style.display = "flex";
+        sessionStorage.setItem("introPlayed", "true");
+      });
+    }
+  </script>
+  </div>
+</body>
+
+</html>

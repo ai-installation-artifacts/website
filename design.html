@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+
+<body class="p-8">
+  <main class="flex flex-col space-y-8">
+
+    <section class="flex items-center gap-8 group">
+      <a href="project.html">
+        <img src="images/arrow_left_line.svg" alt="Back" class="h-12 dual-drop-shadow" />
+      </a>
+      <h1 class="text-3xl font-bold dual-text-shadow">DESIGN</h1>
+    </section>
+
+    <section class="text-xl max-w-3xl space-y-4 dual-text-shadow">
+
+      <p>
+        Artifacts presents itself with intentional reduction. Like an abandoned office
+        that was forgotten but continues to operate. The environment is clinical, quiet and almost empty. There
+        is no visual overload as the focus is on the interaction.
+      </p>
+
+      <p><b>Colors</b></p>
+      <p>
+        The color palette revolves around white, grey, black and the yellowed plastic of outdated office
+        technology. Everything feels slightly old and somewhat deserted. Subtle contrasts emerge between analog
+        and digital, between past and present.
+      </p>
+
+      <div class="py-8 flex justify-center">
+
+        <!-- Mobile -->
+        <div class="flex items-center gap-4 sm:hidden">
+          <button onclick="showPrevImage('colors')" class="w-6 h-6 dual-drop-shadow">
+            <img src="images/left_line.svg" alt="Zurück" class="w-full h-full" />
+          </button>
+          <img id="mobileImageColors" src="images/colors1.png" class="w-[200px] h-[200px] object-cover rounded"
+            alt="Colors Picture" />
+          <button onclick="showNextImage('colors')" class="w-6 h-6 dual-drop-shadow">
+            <img src="images/right_line.svg" alt="Weiter" class="w-full h-full" />
+          </button>
+        </div>
+
+        <!-- Desktop -->
+        <div class="hidden sm:flex gap-4">
+          <img src="images/colors1.png" class="w-[200px] h-[200px] object-cover rounded" alt="Colors Picture" />
+          <img src="images/colors2.png" class="w-[200px] h-[200px] object-cover rounded" alt="Colors Picture" />
+        </div>
+      </div>
+
+      <p><b>Materials</b></p>
+      <p>
+        Materials are chosen for their technical character and functional appearance. Yet nothing remains fully
+        controlled. Shredded paper piles up unpredictably on the floor, like scattered evidence of an invisible
+        process.
+      </p>
+
+      <div class="py-8 flex justify-center">
+        <!-- Mobile -->
+        <div class="flex items-center gap-4 sm:hidden">
+          <button onclick="showPrevImage('materials')" class="w-6 h-6 dual-drop-shadow">
+            <img src="images/left_line.svg" alt="Zurück" class="w-full h-full" />
+          </button>
+          <img id="mobileImageMaterials" src="images/materials1.png" class="w-[200px] h-[200px] object-cover rounded"
+            alt="Material Picture" />
+          <button onclick="showNextImage('materials')" class="w-6 h-6 dual-drop-shadow">
+            <img src="images/right_line.svg" alt="Weiter" class="w-full h-full" />
+          </button>
+        </div>
+        <!-- Desktop -->
+        <div class="hidden sm:flex gap-4">
+          <img src="images/materials1.png" class="w-[200px] h-[200px] object-cover rounded" alt="Material Picture" />
+          <img src="images/materials2.png" class="w-[200px] h-[200px] object-cover rounded" alt="Material Picture" />
+        </div>
+      </div>
+
+      <p><b>Sound</b></p>
+      <p>
+        The sound design avoids music or voices. It focuses entirely on mechanical sounds that make every
+        interaction unmistakably present. The space listens.
+      </p>
+
+      <div class="py-8 flex justify-center">
+        <img src="images/sound.png" alt="Sound Picture"
+          class="object-cover rounded w-[200px] h-[200px] sm:w-[416px] sm:h-[200px]" />
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    const imageSets = {
+      colors: ["images/colors1.png", "images/colors2.png"],
+      materials: ["images/materials1.png", "images/materials2.png"]
+    };
+
+    const currentIndex = {
+      colors: 0,
+      materials: 0
+    };
+
+    function updateImage(type) {
+      document.getElementById(`mobileImage${capitalize(type)}`).src = imageSets[type][currentIndex[type]];
+    }
+
+    function showNextImage(type) {
+      currentIndex[type] = (currentIndex[type] + 1) % imageSets[type].length;
+      updateImage(type);
+    }
+
+    function showPrevImage(type) {
+      currentIndex[type] = (currentIndex[type] - 1 + imageSets[type].length) % imageSets[type].length;
+      updateImage(type);
+    }
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    updateImage('colors');
+    updateImage('materials');
+  </script>
+
+</body>
+
+</html>
