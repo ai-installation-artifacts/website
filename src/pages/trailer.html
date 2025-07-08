@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trailer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <script src="../scripts/preloader.js"></script>
+</head>
+
+<body class="content-page">
+    <main class="flex flex-col space-y-8">
+
+        <section class="flex items-center gap-8 group">
+            <a href="../../index.html">
+                <img src="../../assets/images/icons/arrow_left_line.svg" alt="Back" class="h-12 dual-drop-shadow" />
+            </a>
+            <h1 class="text-3xl font-bold dual-text-shadow">TRAILER</h1>
+        </section>
+
+        <section class="max-w-3xl">
+            <div class="relative bg-black overflow-hidden">
+                <video id="trailerVideo" class="w-full h-auto" controls autoplay muted playsinline>
+                    <source src="../../assets/videos/trailer.mov" type="video/mp4" />
+                    <p class="text-center text-white p-8">
+                        Your browser doesn't support video playback.
+                        <a href="../../assets/videos/trailer.mov" class="underline">Download the trailer</a>
+                    </p>
+                </video>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

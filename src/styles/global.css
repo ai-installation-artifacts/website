@@ -23,9 +23,9 @@ body.content-page {
 }
 
 @media (min-resolution: 2dppx) {
-  body {
-    filter: blur(0.5px);
-  }
+    body {
+        filter: blur(0.5px);
+    }
 }
 
 /* === Text + Icon Effects === */
@@ -60,7 +60,6 @@ body.content-page {
     max-height: 80vmin;
     background-color: black;
     border: 4px solid var(--primary-text);
-    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,7 +69,6 @@ body.content-page {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 0.5rem;
 }
 
 .overlay-close {
@@ -87,16 +85,21 @@ body.content-page {
     font-weight: bold;
     background-color: black;
     padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
 }
 
 /* === Interactive Elements === */
 
-a, button, [onclick], .clickable {
+a,
+button,
+[onclick],
+.clickable {
     transition: all 0.1s ease;
     cursor: pointer;
 }
 
-a:active, button:active, [onclick]:active, .clickable:active {
+a:active,
+button:active,
+[onclick]:active,
+.clickable:active {
     filter: brightness(0.9);
 }

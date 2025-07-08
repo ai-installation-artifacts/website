@@ -20,9 +20,10 @@ class PagePreloader {
         // Determine the base path depending on current location
         const isInPagesDir = window.location.pathname.includes('/src/pages/');
         const basePath = isInPagesDir ? '../../' : '';
-        
+
         // List of pages to preload
         const criticalPages = [
+            `${basePath}src/pages/trailer.html`,
             `${basePath}src/pages/project.html`,
             `${basePath}src/pages/team.html`,
             `${basePath}src/pages/tech.html`,
@@ -31,7 +32,7 @@ class PagePreloader {
         ];
 
         console.log('Preloading pages...');
-        
+
         for (const page of criticalPages) {
             try {
                 const response = await fetch(page);
@@ -49,7 +50,7 @@ class PagePreloader {
         // Determine the base path depending on current location
         const isInPagesDir = window.location.pathname.includes('/src/pages/');
         const basePath = isInPagesDir ? '../../' : '';
-        
+
         // Preload critical images
         const criticalImages = [
             `${basePath}assets/images/team/AYSE.png`,
@@ -63,7 +64,7 @@ class PagePreloader {
         ];
 
         console.log('Preloading images...');
-        
+
         criticalImages.forEach(imageSrc => {
             const img = new Image();
             img.onload = () => console.log(`Preloaded image: ${imageSrc}`);
